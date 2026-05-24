@@ -18,8 +18,8 @@ def get_db_connection():
         ssl={'ssl_mode': 'REQUIRED'}
     )
 
-EQUIPOS_PRO = ["Francia", "Brasil", "Inglaterra", "Argentina", "España", "Alemania", "Portugal", "Países Bajos", "Italia", "Uruguay"]
-EQUIPOS_SECUNDARIOS = ["Bélgica", "Colombia", "Croacia", "Marruecos", "Estados Unidos", "México", "Japón", "Senegal", "Dinamarca", "Suiza"]
+EQUIPOS_PRO = ["Francia", "Brasil", "Inglaterra", "Argentina", "España", "Alemania", "Portugal", "Países Bajos", "Belgica", "Croacia"]
+EQUIPOS_SECUNDARIOS = ["Uruguay", "Colombia", "Ecuador", "Marruecos", "Estados Unidos", "México", "Japón", "Senegal", "Dinamarca", "Suiza"]
 
 @app.route('/')
 def index():
