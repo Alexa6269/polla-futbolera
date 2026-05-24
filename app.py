@@ -15,7 +15,14 @@ DB_CONFIG = {
 }
 
 def get_db_connection():
-    return pymysql.connect(**DB_CONFIG)
+    return pymysql.connect(
+        host=os.environ.get('DB_HOST'),
+        user=os.environ.get('DB_USER'),
+        password=os.environ.get('DB_PASS'),
+        database=os.environ.get('DB_NAME'),
+        port=int(os.environ.get('DB_PORT')),
+        ssl={'ssl_mode': 'REQUIRED'}
+    )
 
 # ARRAY 1: Las 10 superpotencias con mayor probabilidad de ganar el Mundial 2026
 EQUIPOS_PRO = [
