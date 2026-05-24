@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS asignaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_usuario VARCHAR(100) NOT NULL UNIQUE,
+    equipo_pro VARCHAR(100) NOT NULL,
+    equipo_secundario VARCHAR(100) NOT NULL,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
