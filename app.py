@@ -5,14 +5,6 @@ import random
 app = Flask(__name__)
 app.secret_key = "polla_futbolera_secret_key_123"
 
-# Configuración ajustada a tu phpMyAdmin en Mac
-DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',       
-    'password': '',       # Si usas MAMP y no conecta, prueba cambiando '' por 'root'
-    'database': 'polla',  # Nombre exacto de tu base de datos en la captura
-    'cursorclass': pymysql.cursors.DictCursor
-}
 
 def get_db_connection():
     return pymysql.connect(
