@@ -18,20 +18,18 @@ def init_db():
     conn = get_db_connection()
     cur = conn.cursor()
     with open('schema.sql', 'r') as f:
-        sql_commands = f.read().split(';') # Divide el archivo por comandos
-        for command in sql_commands:
-            if command.strip():
-                cur.execute(command)
+        # Ejecuta el archivo SQL completo
+        cur.execute(f.read())
     conn.commit()
     cur.close()
     conn.close()
 
-# Inicialización automática
+# Inicialización segura
 try:
     init_db()
 except Exception as e:
-    print(f"La base de datos ya está inicializada o hubo un error: {e}")
+    print(f"La base de datos ya está lista: {e}")
 
 @app.route('/')
 def index():
-    return "La Polla Futbolera está funcionando correctamente."
+    return "Polla Futbolera conectada con la tabla asignaciones."
